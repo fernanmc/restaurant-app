@@ -1,0 +1,19 @@
+<div *ngIf="restaurante" class="restaurante-box">
+        <h1>Restaurante: {{restaurante.nombre}}</h1>
+        <div class="image"><img src="http://localhost/restaurante/uploads/{{restaurante.imagen}}" *ngIf="restaurante.imagen && restaurante.imagen !== 'null'" />
+        <p class="precio">
+           <!-- {{restaurante.precio}}!-->
+            <span [ngSwitch]="restaurante.precio">
+                <span *ngSwitchCase="'bajo'">Entre 2'50 y 5 €</span>
+                <span *ngSwitchCase="'medio'">Entre 4'50 y 9 €</span>
+                <span *ngSwitchCase="'alto'">Entre 7'50 y 20 €</span>
+            </span>
+        </p>
+            <p class="descripcion">
+                {{restaurante.descripcion}}
+            </p>
+             <p class="descripcion">
+                {{restaurante.direccion}}
+            </p>
+</div>
+
